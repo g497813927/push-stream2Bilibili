@@ -27,30 +27,44 @@ done
 while true
 do
     read -p ${language[0]} m3u8_address
-    printf "\"${m3u8_address}\""
-    read -p "${language[1]}" selection
+    while true
+    do
+        printf "\"${m3u8_address}\""
+        read -p "${language[1]}" selection
+        case ${selection} in
+            Y | y)
+                break;;
+            N | n)
+                break;;
+            *)
+                echo ${language[2]};;
+        esac
+    done
     case ${selection} in
-        Y | y)
-            break;;
-        N | n)
-            echo "";;
-        *)
-            echo ${language[2]};;
+            Y | y)
+                break;;
     esac
 done
 
 while true
 do
     read -p ${language[3]} bilibili_address
-    printf "\"${bilibili_address}\""
-    read -p "${language[4]}" selection
+    while true
+    do
+        printf "\"${bilibili_address}\""
+        read -p "${language[4]}" selection
+        case ${selection} in
+            Y | y)
+                break;;
+            N | n)
+                break;;
+            *)
+                echo ${language[2]};;
+        esac
+    done
     case ${selection} in
-        Y | y)
-            break;;
-        N | n)
-            echo "";;
-        *)
-            echo ${language[2]};;
+            Y | y)
+                break;;
     esac
 done
 
